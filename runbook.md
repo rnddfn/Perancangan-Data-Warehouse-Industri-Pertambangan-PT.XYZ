@@ -1,4 +1,5 @@
 # 📘 Runbook: Data Warehouse PT. XYZ
+## Kelompok 2 Kecerdasan Bisnis
 
 > **Dokumen Operasional Standar (SOP)** untuk menjalankan, memonitor, dan memelihara infrastruktur Data Warehouse PT. XYZ menggunakan Docker Compose.
 
@@ -48,7 +49,7 @@ Informational Environment (OLAP)
 
 Sistem terdiri dari beberapa layanan Docker yang saling bergantung:
 
-| Layanan               | Container Name    | Deskripsi                                           |
+| Layanan                | Deskripsi                                           |
 | --------------------- | ----------------- | --------------------------------------------------- |
 | **sqlserver**         | `ptxyz_sqlserver` | Database OLTP utama (SQL Server 2022) - sumber data |
 | **postgres**          | `ptxyz_postgres`  | Database metadata untuk Apache Airflow              |
@@ -102,10 +103,11 @@ cp env.example .env
 **Isi file `.env`:**
 
 ```ini
-# Atur password ini
-MSSQL_SA_PASSWORD=PTXYZSecure123!
+# Atur password yang awalnya ini
+MSSQL_SA_PASSWORD=YourSecurePassword123!
 
-# ... (variabel lain mungkin ada di sini)
+# Menjadi:
+MSSQL_SA_PASSWORD=PTXYZSecure123!
 ```
 
 ### 3.3. Modifikasi `docker-compose.yml`
@@ -162,15 +164,14 @@ sqlalchemy
 
 #### 3.5.1. Update Path CSV
 
-Ganti hardcoded path dengan path dinamis:
+Ganti bagian path raw data:
 
 ```python
-import os
 
-# Tentukan base path
+# Ganti Path ini 
 BASE_DATA_PATH = os.path.join('data', 'raw', 'Dataset')
 
-# Buat path lengkap
+# Dengan path dengan data yang disediakan sesuai dengan repositori github
 equipment_path = os.path.join(BASE_DATA_PATH, 'dataset_alat_berat_dw.csv')
 production_path = os.path.join(BASE_DATA_PATH, 'dataset_production.csv')
 transaction_path = os.path.join(BASE_DATA_PATH, 'dataset_transaksi.csv')
@@ -182,11 +183,6 @@ transaction_path = os.path.join(BASE_DATA_PATH, 'dataset_transaksi.csv')
 #### 3.5.2. Ganti Fungsi Koneksi Database
 
 ```python
-import pyodbc
-import os
-import logging
-from dotenv import load_dotenv
-
 def get_sql_connection():
     """Membuat koneksi SQL Server menggunakan pyodbc"""
     try:
@@ -569,14 +565,4 @@ Untuk menjaga keandalan proses ETL, diterapkan strategi recovery apabila terjadi
 
 ---
 
-## 📝 Lisensi
-
-© 2025 PT. XYZ - Kelompok 22
-
 ---
-
-**Kontak Tim:**
-
-- Email: support@ptxyz.com
-- Dokumentasi: [Link ke dokumentasi lengkap]
-- Issue Tracker: [Link ke issue tracker]
