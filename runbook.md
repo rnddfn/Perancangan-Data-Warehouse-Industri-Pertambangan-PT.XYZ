@@ -49,19 +49,19 @@ Informational Environment (OLAP)
 
 Sistem terdiri dari beberapa layanan Docker yang saling bergantung:
 
-| Layanan                | Deskripsi                                           |
-| --------------------- | ----------------- | --------------------------------------------------- |
-| **sqlserver**         | `ptxyz_sqlserver` | Database OLTP utama (SQL Server 2022) - sumber data |
-| **postgres**          | `ptxyz_postgres`  | Database metadata untuk Apache Airflow              |
-| **redis**             | `ptxyz_redis`     | Message broker untuk antrian tugas (Celery) Airflow |
-| **airflow-webserver** | -                 | Antarmuka (UI) Apache Airflow                       |
-| **airflow-scheduler** | -                 | Penjadwal utama yang memicu eksekusi DAG (pipeline) |
-| **airflow-worker**    | -                 | Worker yang menjalankan tugas-tugas ETL             |
-| **superset**          | -                 | Platform visualisasi dan analitik                   |
-| **jupyter**           | -                 | Notebook untuk analisis data ad-hoc                 |
-| **grafana**           | -                 | Dashboard monitoring                                |
-| **metabase**          | -                 | Business Intelligence tool                          |
-| **db_init**           | -                 | Layanan one-time untuk inisialisasi skema/data awal |
+| Layanan           | Deskripsi                                                                 |
+|--------------------|---------------------------------------------------------------------------|
+| sqlserver          | Database OLTP utama (SQL Server 2022) - sumber data                      |
+| postgres           | Database metadata untuk Apache Airflow                                   |
+| redis              | Message broker untuk antrian tugas (Celery) Airflow                      |
+| airflow-webserver  | Antarmuka (UI) Apache Airflow                                            |
+| airflow-scheduler  | Penjadwal utama yang memicu eksekusi DAG (pipeline)                      |
+| airflow-worker     | Worker yang menjalankan tugas-tugas ETL                                  |
+| superset           | Platform visualisasi dan analitik                                        |
+| jupyter            | Notebook untuk analisis data ad-hoc                                      |
+| grafana            | Dashboard monitoring                                                     |
+| metabase           | Business Intelligence tool                                               |
+| db_init            | Layanan one-time untuk inisialisasi skema/data awal                      |
 
 ---
 
