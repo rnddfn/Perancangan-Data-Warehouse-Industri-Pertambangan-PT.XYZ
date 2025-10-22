@@ -215,6 +215,12 @@ def get_sql_connection():
 # Perintah ini akan menampilkan detail file .env jika ada
 ls -la .env
 ```
+### 3.7. Mengubah Format di `init-db.sh`
+
+Pastikan file `init-db.sh` menggunakan format **LF (Line Feed)**, bukan **CRLF (Carriage Return + Line Feed)**.  
+Perbedaan ini penting karena:
+- **LF** adalah format standar baris baru di sistem **Linux/Mac**, tempat Docker container biasanya dijalankan.
+- **CRLF** adalah format baris baru di **Windows**, yang dapat menyebabkan error seperti:
 
 ---
 
@@ -256,7 +262,7 @@ Anda seharusnya melihat semua layanan dalam status `running` atau `healthy`. Jik
 docker compose logs [NAMA_LAYANAN]
 ```
 
-### 5.3. Jalankan ETL Pipeline Manual
+### 5.3. Jalankan ETL Pipeline
 
 Setelah memastikan semua service dalam status **healthy** atau **running**:
 
