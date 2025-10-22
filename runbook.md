@@ -5,7 +5,6 @@
 
 **Terakhir Diperbarui:** 22 Oktober 2025  
 **Versi:** 1.0  
-**Proyek:** DW_Project_Kelompok22
 
 ---
 
