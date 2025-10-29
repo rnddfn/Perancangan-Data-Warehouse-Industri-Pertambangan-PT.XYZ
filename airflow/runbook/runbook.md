@@ -45,7 +45,7 @@ Informational Environment (OLAP)
    └── Data Analytics & Decision Making
 ```
 
-![Data Arsitektur] (./arsitektur.png)
+![Data Arsitektur](./arsitektur.png)
 
 ### 1.2. Arsitektur Komponen
 
@@ -580,4 +580,5 @@ Untuk menjaga keandalan proses ETL, diterapkan strategi recovery apabila terjadi
 ---
 
 ---
+
 
